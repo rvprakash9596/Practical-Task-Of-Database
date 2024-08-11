@@ -117,15 +117,41 @@ JOB_ID varchar(20),
 SALARY int);
 
 Desc EMPLOYEE;
+
+insert into EMPLOYEE  values( 100, "Siya" , '201-06-06', "IT_PROG" , 50000),
+( 102, "Saurabh" , '2019-09-15', "IT_PROG" , 100000),
+( 103, "Seema" , '2012-06-06', "IT_PROG" , 80000),
+( 104, "Shivam" , '2019-08-15', "IT_PROG" , 200000),
+( 105, "Sandhya" ,null,  "SOFT_PROG" , 100000),
+( 106, "Shakshi" , '2021-09-25', "SOFT_PROG" , 200000),
+( 107, "sHILPA" ,null,  "SOFT_PROG" , 60000),
+( 108, "Shubham" , '2019-08-15', "IT_PROG" , 33000);
+
 select * from EMPLOYEE;
 
 -- 1.select record of employee who earns more than 40000.
+select * from EMPLOYEE where salary>40000;
+
 -- 2.show name and job_id of those employees who joined company before 2018-01-01.
+select FIRST_NAME , JOB_ID from EMPLOYEE where HIRE_DATE< '2018-01-01';
+
 -- 3.show all record of employee whose job_id IT_PROG and salary is greater than 100000.
+select * from EMPLOYEE where JOB_ID = 'IT_PROG' and SALARY>100000;
+
 -- 4.select all record of employee whose JOB_ID is either IT_PROG or who joined company after 2017-01-01.
+select * from EMPLOYEE where (JOB_ID= 'IT_PROG' or HIRE_DATE > '2017-01-01');
+
 -- 5.select record of employee whose salary is under 20000-100000.
+SELECT salary from EMPLOYEE where SALARY BETWEEN 20000 and 100000;
+
 -- 6.select all employee details whose name starts with Sh.
+select * from EMPLOYEE where FIRST_NAME like 'sh%';
+
 -- 7.Select number of employee whose HIRE_DATE is null.
+SELECT COUNT(*) FROM EMPLOYEE WHERE HIRE_DATE IS NULL;
+
 -- 8.delete record of employee whose salary is less than 33000.
+
 -- 9.delete all record of employee whose JOB_ID is either IT_PROG or who joined company after 2017-01-01.
+
 -- 10.Delete record of employee whose salary is belongx to 20000-60000 or HORE_DATE is null.
